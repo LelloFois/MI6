@@ -12,4 +12,14 @@ class PersonController extends Controller
     $people = Person::with('aliases')->get();
     return $people;
    }
+
+   public function search($request) 
+   {
+         $people = Person::query();
+         
+         if (isset($request['search'])) {
+            $people = $people->where('name', 'like', '%' . $request['search'].'%');
+         }
+         return $people;
+   }
 }

@@ -4,6 +4,7 @@ import { useEffect, useState} from 'react';
 const App = () => {
 
     const [data, setData] = useState(null);
+    const [request, setRequest] = useState('')
 
     const fetchData = async () => {
         const response = await fetch('/api/people_of_interest');
@@ -12,17 +13,40 @@ const App = () => {
 
     }
 
+    const fetchSearch = async (request) => {
+        const response = await fetch (`/api/?search=${request}`);
+        const searchedData = await response.json();
+        // console.log(searchedData)
+        setRequest(searchedData);
+    }
+
     useEffect(()=>{
         fetchData();
+        fetchSearch();
     },[])
 
-    console.log(data)
+    const onChangeHandler = (text) => {
+   
+        let matches = [];
+        if (text.length > 0) {
+            matches = data.filter(name => {
+                const regex = new RegExp(`${text}`, "gi");
+                return name.name.match(regex)
+            } )
+        }
+         console.log(matches);
+        setData(matches);
+        
+      }
+
+   
     return( 
         data == null ?
         <h1>Loading...</h1>
         :
 
         <div className="content">
+            <input type={'text'} placeholder={'Search...'} onChange={e => onChangeHandler(e.target.value)} />
 
             {data.map((person) => {
                 return(

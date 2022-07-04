@@ -16,6 +16,9 @@
         <div class="nav-control">
             <button><</button>
         </div>
+        {{-- <div class="search"> 
+            <input type="text" name="search" placeholder="Search...">
+        </div> --}}
     </div>
     
         @yield('content')

@@ -19,3 +19,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('/people_of_interest', [App\Http\Controllers\Api\PersonController::class, 'index']);
+Route::get('?search={name}', [App\Http\Controllers\Api\PersonController::class, 'search']);
