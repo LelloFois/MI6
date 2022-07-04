@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Noto+Serif+Display:wght@200;400;700&display=swap');
+
+body {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    color: white;
+    min-height: 100vh;
+}
+
+.nav-panel {
+    width: 300px;
+    background-color: #163838;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Cutive Mono';
+    transition: 1s;
+}
+
+.nav-panel p {
+    margin-left: 2rem;
+}
+
+.seal {
+    width: 10rem;
+    margin: 0 auto;
+}
+
+.content {
+    flex-grow: 1;
+    background-color: #2B5554;
+    background-image: url("https://classes.codingbootcamp.cz/assets/classes/1404/mi6-seal-bg.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.nav-control {
+    position: absolute;
+    top: 2rem;
+    left: 300px;
+}
+
+.nav-control button {
+    border-width: 0;
+    background-color: #163838;
+    color: white;
+    border-radius: 0 0.5rem 0.5rem 0;
+    height: 2rem;
+    width: 2rem;
+    font-size: 1.5rem;
+}
+
+.nav-panel.hidden {
+    width: 0;
+}
+.nav-panel.hidden .nav-control {
+    left: 0;
+}
