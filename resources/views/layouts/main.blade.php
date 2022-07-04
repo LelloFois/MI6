@@ -11,15 +11,16 @@
 <body>
     <div class="nav-panel">
         <img class="seal" src="https://classes.codingbootcamp.cz/assets/classes/1404/mi6-seal.png" alt="MI6 Seal">
-        <a href="#">Home</a>
-        <a href="#">People of Interest</a>
+        <a href="/">Home</a>
+        <a href="people_of_interest">People of Interest</a>
         <div class="nav-control">
             <button><</button>
         </div>
     </div>
-    <main class="content">
+    
         @yield('content')
-    </main>
+        @yield('people')
+    
 
 <script>
     const button = document.querySelector('.nav-control button')

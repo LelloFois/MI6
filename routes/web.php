@@ -16,3 +16,7 @@ use App\Http\Controllers;
 Route::get('/', function () {
     return view('home_index');
 });
+
+Route::get('/people_of_interest', function () {
+    return view('people_of_interest/index');
+});
