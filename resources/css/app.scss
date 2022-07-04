@@ -15,11 +15,15 @@ body {
     flex-direction: column;
     font-family: 'Cutive Mono';
     transition: 1s;
+    a {
+        margin-left: 2rem;
+        margin-top: 1rem;
+        text-decoration: none;
+        color:white;
+    }
 }
 
-.nav-panel p {
-    margin-left: 2rem;
-}
+
 
 .seal {
     width: 10rem;

@@ -11,8 +11,8 @@
 <body>
     <div class="nav-panel">
         <img class="seal" src="https://classes.codingbootcamp.cz/assets/classes/1404/mi6-seal.png" alt="MI6 Seal">
-        <p>Home</p>
-        <p>People of Interest</p>
+        <a href="#">Home</a>
+        <a href="#">People of Interest</a>
         <div class="nav-control">
             <button><</button>
         </div>
