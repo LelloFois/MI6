@@ -4,6 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Alias;
+use App\Models\Status;
+use App\Models\Image;
 
 class Person extends Model
 {
