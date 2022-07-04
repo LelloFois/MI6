@@ -32,12 +32,13 @@ body {
 
 .content {
     flex-grow: 1;
+    flex-direction: column;
     background-color: #2B5554;
     background-image: url("https://classes.codingbootcamp.cz/assets/classes/1404/mi6-seal-bg.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
-    height: 100vh;
+    height: 100%;
     width: 70vw;
 }
 

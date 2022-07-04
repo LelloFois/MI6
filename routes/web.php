@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers;
+use App\Http\Controllers\PersonController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,6 +18,4 @@ Route::get('/', function () {
     return view('home_index');
 });
 
-Route::get('/people_of_interest', function () {
-    return view('people_of_interest/index');
-});
+Route::get('/people_of_interest', [PersonController::class, 'index']);
