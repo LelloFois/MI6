@@ -1,4 +1,6 @@
 import { useEffect, useState} from 'react';
+import  {StatusFilter} from 'StatusFilter';
+imp
 
 
 const App = () => {
@@ -44,7 +46,7 @@ const App = () => {
         data == null ?
         <h1>Loading...</h1>
         :
-
+          
         <div className="content">
             <input type={'text'} placeholder={'Search...'} onChange={e => onChangeHandler(e.target.value)} />
 
@@ -61,9 +63,10 @@ const App = () => {
                     </ul>
                     
                 </>
+
                 )
             })}
-        
+        <StatusFilter />
         </div>
     ) 
     }
