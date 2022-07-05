@@ -6,7 +6,8 @@ imp
 const App = () => {
 
     const [data, setData] = useState(null);
-    const [request, setRequest] = useState('')
+    const [request, setRequest] = useState('');
+    const [selectedStatus, setSelectedStatus] = useState('');
 
     const fetchData = async () => {
         const response = await fetch('/api/people_of_interest');
@@ -66,7 +67,7 @@ const App = () => {
 
                 )
             })}
-        <StatusFilter />
+        <StatusFilter selectedStatus={selectedStatus} setSelectedStatus={setSelectedStatus}/>
         </div>
     ) 
     }
