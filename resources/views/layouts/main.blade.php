@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="{{mix('/css/app.css')}}">
-    <script src="../js/script.js" defer></script>
+    
 </head>
 <body>
     <div class="nav-panel">
@@ -23,6 +23,8 @@
     
         @yield('content')
         @yield('people')
+
+        <div id="root"></div>
     
 
 <script>

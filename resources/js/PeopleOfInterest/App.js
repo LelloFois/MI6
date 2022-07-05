@@ -1,6 +1,6 @@
 import { useEffect, useState} from 'react';
-import  {StatusFilter} from 'StatusFilter';
-imp
+import  {StatusFilter} from './StatusFilter';
+
 
 
 const App = () => {
@@ -17,10 +17,10 @@ const App = () => {
     }
 
     const fetchSearch = async (request) => {
-        const response = await fetch (`/api/?search=${request}`);
+        const response = await fetch (`/api/search?search=${request}`);
         const searchedData = await response.json();
-        // console.log(searchedData)
-        setRequest(searchedData);
+        console.log(searchedData)
+        setData(searchedData);
     }
 
     useEffect(()=>{
@@ -29,17 +29,9 @@ const App = () => {
     },[])
 
     const onChangeHandler = (text) => {
-   
-        let matches = [];
-        if (text.length > 0) {
-            matches = data.filter(name => {
-                const regex = new RegExp(`${text}`, "gi");
-                return name.name.match(regex)
-            } )
-        }
-         console.log(matches);
-        setData(matches);
-        
+
+        setRequest(text);
+        fetchSearch(text);
       }
 
    
@@ -49,7 +41,7 @@ const App = () => {
         :
           
         <div className="content">
-            <input type={'text'} placeholder={'Search...'} onChange={e => onChangeHandler(e.target.value)} />
+            <input type={'text'} placeholder={'Search...'} onChange={e => onChangeHandler(e.target.value)} value={request} />
 
             {data.map((person) => {
                 return(
@@ -67,7 +59,8 @@ const App = () => {
 
                 )
             })}
-        <StatusFilter selectedStatus={selectedStatus} setSelectedStatus={setSelectedStatus}/>
+
+        <div><StatusFilter selectedStatus={selectedStatus} setSelectedStatus={setSelectedStatus}/></div>
         </div>
     ) 
     }

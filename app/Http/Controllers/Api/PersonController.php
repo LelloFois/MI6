@@ -13,13 +13,27 @@ class PersonController extends Controller
     return $people;
    }
 
-   public function search($request) 
+   // public function search(Request $request, $search_string) 
+   // {
+   //       dd($search_string);
+   //       $people = Person::query();
+         
+   //       if (isset($request['search'])) {
+   //          $people = $people->where('name', 'like', '%' . $request['search'].'%');
+   //       }
+   //       return $people;
+   // }
+
+   public function search(Request $request) 
    {
+         
          $people = Person::query();
          
-         if (isset($request['search'])) {
-            $people = $people->where('name', 'like', '%' . $request['search'].'%');
+         if ($request->input('search') !== null) {
+            $people = $people->where('name', 'like', '%' . $request->input('search') .'%');
          }
-         return $people;
+      $people = $people->with('aliases')->get();  
+
+      return $people;
    }
 }
