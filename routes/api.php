@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\Api\PersonController;
+use App\Http\Controllers\Api\StatusController;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -18,5 +21,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/people_of_interest', [App\Http\Controllers\Api\PersonController::class, 'index']);
-Route::get('?search={name}', [App\Http\Controllers\Api\PersonController::class, 'search']);
+Route::get('/people_of_interest', [PersonController::class, 'index']);
+Route::get('?search={name}', [PersonController::class, 'search']);
+Route::get('/statuses', [StatusController::class, 'index']);
