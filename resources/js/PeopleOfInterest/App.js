@@ -41,12 +41,12 @@ const App = () => {
     return( 
         
         data == null ?
-        <h1>Loading...</h1>
+        <div className='content'><h1>Loading...</h1></div>
         :
           
         <div className="content">
             <StatusFilter selectedStatus={selectedStatus} setSelectedStatus={setSelectedStatus}/>
-            <input type={'text'} placeholder={'Search...'} onChange={e => onChangeHandler(e.target.value)} value={request} />
+            <input className="search" type={'text'} placeholder={'Search...'} onChange={e => onChangeHandler(e.target.value)} value={request} />
              <MissionEditForm /> 
              
             {data.map((person) => {

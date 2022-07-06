@@ -38,16 +38,23 @@ a {
     width: 10rem;
     margin: 0 auto;
 }
+ 
 
 .content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     flex-grow: 1;
     flex-direction: column;
+  
     background-color: #2B5554;
     background-image: url("https://classes.codingbootcamp.cz/assets/classes/1404/mi6-seal-bg.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
     width: 70vw;
+
+    
 }
 
 .nav-control {
@@ -87,4 +94,33 @@ p{
     padding: 10px;
     text-align: left;  
     width: 400px;
+}
+
+.form.form-hidden {
+    display: none;
+}
+
+button {
+    background-color: #163838;
+    color: whitesmoke;
+    border: none;
+    border-radius: 2px;
+    margin: 0.03em;
+    margin-bottom: 1em;
+    &:hover {
+        background-color: #449696;
+    }
+    &:focus {
+        background-color: #449696;
+    }
+}
+
+.search {
+    background-color: #86c7c7;
+    border: none;
+    outline: none;
+    border-radius: 2px;
+    color: whitesmoke;
+    margin-bottom: 1em;
+    
 }

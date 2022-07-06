@@ -3,6 +3,7 @@ import axios from 'axios';
 
 
 export default function MissionEditForm() {
+    const [toggle, setToggle] = useState("form form-hidden")
     const [values, setValues] = useState({
         name: 'name',
         year: 'year',
@@ -27,9 +28,18 @@ export default function MissionEditForm() {
        
     }
 
-    return (
+    const handleForm = () => {
+        toggle == 'form form-hidden' ?
+        setToggle("form") :
+        setToggle('form form-hidden')
+        ;
+    }
 
-        <div className='form'>
+    return (
+        <>
+        <button onClick={ handleForm }>{toggle == 'form form-hidden' ? 'Edit Missions' : 'Close'}</button>
+        <div className={ toggle }>
+            
             
             <form action="" method='POST' onSubmit={(e)=>{
                 handleSubmit(e)}
@@ -48,6 +58,7 @@ export default function MissionEditForm() {
      
             </form>
         </div>
+        </>
     )
 }
 
