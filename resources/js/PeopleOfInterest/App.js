@@ -1,5 +1,7 @@
 import { useEffect, useState} from 'react';
-import  {StatusFilter} from './StatusFilter';
+import  { StatusFilter } from './StatusFilter';
+import  MissionEditForm from './MissionEditForm'; 
+
 
 
 
@@ -10,10 +12,11 @@ const App = () => {
     const [selectedStatus, setSelectedStatus] = useState('');
 
     const fetchData = async () => {
-        const response = await fetch('/api/people_of_interest');
+        const response = await fetch('api/people_of_interest' + '?status=' + encodeURIComponent(selectedStatus));
         const parsedResponse = await response.json();
-        setData(parsedResponse)
-
+        // console.log('api/people-of-interest' + '&status=' + encodeURIComponent(selected_status));
+        // console.log(parsedRespose);
+        setData(parsedResponse);
     }
 
     const fetchSearch = async (request) => {
@@ -26,7 +29,7 @@ const App = () => {
     useEffect(()=>{
         fetchData();
         fetchSearch();
-    },[])
+    },[selectedStatus])
 
     const onChangeHandler = (text) => {
 
@@ -36,13 +39,16 @@ const App = () => {
 
    
     return( 
+        
         data == null ?
         <h1>Loading...</h1>
         :
           
         <div className="content">
+            <StatusFilter selectedStatus={selectedStatus} setSelectedStatus={setSelectedStatus}/>
             <input type={'text'} placeholder={'Search...'} onChange={e => onChangeHandler(e.target.value)} value={request} />
-
+             <MissionEditForm /> 
+             
             {data.map((person) => {
                 return(
                 <>
@@ -60,7 +66,11 @@ const App = () => {
                 )
             })}
 
-        <div><StatusFilter selectedStatus={selectedStatus} setSelectedStatus={setSelectedStatus}/></div>
+        <div>
+            
+           
+        </div>
+
         </div>
     ) 
     }

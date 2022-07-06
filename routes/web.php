@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers;
 use App\Http\Controllers\PersonController;
+use App\Http\Controllers\Api\MissionsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,3 +20,5 @@ Route::get('/', function () {
 });
 
 Route::get('/people_of_interest', [PersonController::class, 'index']);
+
+Route::post('/submit', [MissionsController::class, 'store']);

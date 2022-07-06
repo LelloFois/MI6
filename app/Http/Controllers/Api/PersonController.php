@@ -7,23 +7,20 @@ use App\Models\Person;
 
 class PersonController extends Controller
 {
-   public function index() 
+   public function index(Request $request)
    {
-    $people = Person::with('aliases')->get();
-    return $people;
+       $status = $request->input('status');
+       // dd($request->input('status'));
+       if (!empty($status)) {
+           $people = Person::with('aliases')
+               ->with('missions')
+               ->where('status_id', '=', $status)
+               ->get();
+       } else {
+           $people = Person::with('aliases')->with('missions')->get();
+       }
+       return $people;
    }
-
-   // public function search(Request $request, $search_string) 
-   // {
-   //       dd($search_string);
-   //       $people = Person::query();
-         
-   //       if (isset($request['search'])) {
-   //          $people = $people->where('name', 'like', '%' . $request['search'].'%');
-   //       }
-   //       return $people;
-   // }
-
    public function search(Request $request) 
    {
          
@@ -37,3 +34,5 @@ class PersonController extends Controller
       return $people;
    }
 }
+
+
