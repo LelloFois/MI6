@@ -9,7 +9,9 @@ use App\Models\Person;
 class Mission extends Model
 {
     use HasFactory;
-
+    
+    protected $guarded = [];
+    
     protected $fillable = [
         'name',
         'year',

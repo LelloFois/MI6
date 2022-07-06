@@ -12,8 +12,9 @@
 <body>
     <div class="nav-panel">
         <img class="seal" src="https://classes.codingbootcamp.cz/assets/classes/1404/mi6-seal.png" alt="MI6 Seal">
-        <a href="/">Home</a>
-        <a href="people_of_interest">People of Interest</a>
+        <p><a href="/">Home</a></p>
+        <p><a href="/people_of_interest">People of Interest</a></p>
+        <p><a href="/missions">Missions</a></p>
         <div class="nav-control">
             <button><</button>
         </div>

@@ -20,4 +20,9 @@ class MissionsController extends Controller
 
         return $result;
     }
+
+    public function app()
+    {
+        return view('missions/app');
+    }
 }

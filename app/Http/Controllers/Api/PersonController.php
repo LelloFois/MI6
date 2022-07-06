@@ -21,6 +21,7 @@ class PersonController extends Controller
        }
        return $people;
    }
+   
    public function search(Request $request) 
    {
          

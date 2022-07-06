@@ -22,3 +22,5 @@ Route::get('/', function () {
 Route::get('/people_of_interest', [PersonController::class, 'index']);
 
 Route::post('/submit', [MissionsController::class, 'store']);
+
+Route::get('/missions/{path?}', [MissionsController::class, 'app'])->where('path', '.*');
