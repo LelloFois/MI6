@@ -107,6 +107,7 @@ button {
     border-radius: 2px;
     margin: 0.03em;
     margin-bottom: 1em;
+    transition: 0.7s;
     &:hover {
         background-color: #449696;
     }
@@ -122,5 +123,18 @@ button {
     border-radius: 2px;
     color: whitesmoke;
     margin-bottom: 1em;
+    
+}
+
+.card {
+    background: linear-gradient(to right, #296A6A 0%, #53A4A3 50%, #7CC3C3 100%);
+    border-radius: 2px;
+    border: 1px solid #73b4b4;
+    box-shadow: 0px 16px 36px -11px #163838;
+    margin-bottom: 1em;
+    transition: 0.7s;
+    &:hover{
+        transform: scale(1.1);
+    }
     
 }

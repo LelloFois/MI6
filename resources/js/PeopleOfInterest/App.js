@@ -52,14 +52,16 @@ const App = () => {
             {data.map((person) => {
                 return(
                 <>
-                    <p>{person.name} is {person.occupation}</p>
-                    <p>Known Aliases:</p>
-                    <ul>
-                        {person.aliases.map((alias) => {
-                            return <li>{alias.alias}</li>
-                           
-                        })}
-                    </ul>
+                    <div className='card'>
+                        <p>{person.name} is {person.occupation}</p>
+                        <p>Known Aliases:</p>
+                        <ul>
+                            {person.aliases.map((alias) => {
+                                return <li>{alias.alias}</li>
+                               
+                            })}
+                        </ul>
+                    </div>
                     
                 </>
 
